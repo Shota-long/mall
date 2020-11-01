@@ -1,0 +1,25 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      routes:
+        - id: route2
+          uri: lb://mall-product
+          predicates:
+          - Path=/admin/product/**
+          filters:
+          - RewritePath=/admin(?<segment>/?.*),$\{segment}
+        - id: route1
+          uri: lb://renren-fast
+          predicates:
+          - Path=/admin/**
+          filters:
+          - RewritePath=/admin(?<segment>/?.*),/renren-fast$\{segment}
+
+  application:
+    name: mall-gateway
+
+server:
+  port: 88
