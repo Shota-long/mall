@@ -11,13 +11,18 @@ spring:
           - Path=/admin/product/**
           filters:
           - RewritePath=/admin(?<segment>/?.*),$\{segment}
+        - id: route3
+          uri: lb://mall-third-party
+          predicates:
+          - Path=/admin/thirdparty/**
+          filters:
+          - RewritePath=/admin(?<segment>/?.*),$\{segment}
         - id: route1
           uri: lb://renren-fast
           predicates:
           - Path=/admin/**
           filters:
           - RewritePath=/admin(?<segment>/?.*),/renren-fast$\{segment}
-
   application:
     name: mall-gateway
 

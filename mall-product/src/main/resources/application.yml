@@ -8,6 +8,11 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+#    alicloud:
+#      access-key: LTAI4GJUD83vuhdDt2tTmnUr
+#      secret-key: xM918BetTVxl5mEFsLVKaK2IYYnAGD
+#      oss:
+#        endpoint: http://oss-cn-shenzhen.aliyuncs.com
   application:
     name: mall-product
 
@@ -16,8 +21,19 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: auto
-      logic-delete-field: showStatus  # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
+#      logic-delete-field: showStatus  # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
       logic-delete-value: 0    #显示为1，删除为0
       logic-not-delete-value: 1
 server:
   port: 10000
+
+#aliyun-oss:
+#  bucketName: malldev
+#  ObjectName: content.jpg
+#  endpoint : http://oss-cn-shenzhen.aliyuncs.com
+#  accessKeyId: LTAI4GJUD83vuhdDt2tTmnUr
+#  accessKeySecret: xM918BetTVxl5mEFsLVKaK2IYYnAGD
+#  contentPath: F:\照片\-2ded2e75e9168a49.jpg
+#logging:
+#  level:
+#    root: info

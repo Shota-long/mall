@@ -14,7 +14,7 @@ import javax.annotation.Resource;
 
 @MapperScan("com.dev.mall.product.dao")
 @SpringBootApplication
-//@EnableDiscoveryClient
+@EnableDiscoveryClient
 public class MallProductApplication {
 
     public static void main(String[] args) {

@@ -3,6 +3,8 @@ package com.dev.mall.product.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.dev.mall.product.service.impl.BrandServiceImpl;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +17,7 @@ import com.dev.mall.product.service.BrandService;
 import com.dev.common.utils.PageUtils;
 import com.dev.common.utils.R;
 
+import javax.annotation.Resource;
 
 
 /**
@@ -70,11 +73,10 @@ public class BrandController {
     @RequestMapping("/update")
    // @RequiresPermissions("product:brand:update")
     public R update(@RequestBody BrandEntity brand){
-		brandService.updateById(brand);
-
+        System.out.println(brand);
+        brandService.updateById(brand);
         return R.ok();
     }
-
     /**
      * 删除
      */
@@ -82,7 +84,6 @@ public class BrandController {
     //@RequiresPermissions("product:brand:delete")
     public R delete(@RequestBody Long[] brandIds){
 		brandService.removeByIds(Arrays.asList(brandIds));
-
         return R.ok();
     }
 

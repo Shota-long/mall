@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1
+    alicloud:
+      oss:
+        endpoint: oss-cn-shenzhen.aliyuncs.com
+      access-key: LTAI4GJUD83vuhdDt2tTmnUr
+      secret-key: xM918BetTVxl5mEFsLVKaK2IYYnAGD
+      bucket-name: malldev
+  application:
+    name: mall-third-party
+
+server:
+  port: 13000
