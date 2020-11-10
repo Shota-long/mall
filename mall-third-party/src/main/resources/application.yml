@@ -6,8 +6,8 @@ spring:
     alicloud:
       oss:
         endpoint: oss-cn-shenzhen.aliyuncs.com
-      access-key: LTAI4GJUD83vuhdDt2tTmnUr
-      secret-key: xM918BetTVxl5mEFsLVKaK2IYYnAGD
+      access-key:
+      secret-key: 
       bucket-name: malldev
   application:
     name: mall-third-party
